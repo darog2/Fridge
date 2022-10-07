@@ -3,7 +3,6 @@ package com.dungeon.module;
 import com.dungeon.IncorrectVolumeException;
 import com.dungeon.Product;
 
-import java.util.LinkedList;
 import java.util.List;
 
 public class AbstractContainer extends AbstractModule {
