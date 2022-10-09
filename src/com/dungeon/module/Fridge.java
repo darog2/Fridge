@@ -1,9 +1,6 @@
 package com.dungeon.module;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.*;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(propOrder = {"year", "company", "model", "freezer", "door"} )
@@ -14,9 +11,9 @@ public  class Fridge  {
     private String company;
     @XmlAttribute
     private String model;
-    @XmlAttribute
+    @XmlElement
     private Freezer freezer;
-    @XmlAttribute
+    @XmlElement
     private Door door;
 
 

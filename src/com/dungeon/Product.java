@@ -1,4 +1,4 @@
 package com.dungeon;
 
-public interface Product {
+public class Product {
 }

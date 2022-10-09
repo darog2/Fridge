@@ -1,15 +1,13 @@
-package com.dungeon.fridge;
+package com.dungeon.module;
 
 import com.dungeon.module.Fridge;
 
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlElementWrapper;
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.*;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Spliterator;
+@XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name="Fridges")
 @XmlRootElement
 

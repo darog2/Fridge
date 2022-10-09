@@ -3,14 +3,22 @@ package com.dungeon.module;
 import com.dungeon.IncorrectVolumeException;
 import com.dungeon.VolumeValidationUtil;
 
+
+import javax.xml.bind.annotation.*;
 import java.util.List;
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(propOrder = {"width", "height", "length", "volume","modules"} )
 
 public class AbstractModule {
+    @XmlAttribute
     protected int width;
+    @XmlAttribute
     protected int height;
+    @XmlAttribute
     protected int length;
+    @XmlAttribute
     protected int volume;
-
+@XmlElementWrapper
     protected List<AbstractModule> modules;
 
     public AbstractModule(int width, int height, int length, int volume)
@@ -22,6 +30,8 @@ public class AbstractModule {
         VolumeValidationUtil.validateVolume(this);
     }
 
+    public AbstractModule() {
+    }
 
     public List<AbstractModule> getModules() {
         return modules;
