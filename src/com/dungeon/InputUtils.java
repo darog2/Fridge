@@ -31,7 +31,7 @@ public class InputUtils {
                 }
             }
             if (!isCorrect) {
-                Main.print("incorrect input, try again");
+                System.out.println("incorrect input, try again");
             }
         } while (!isCorrect);
         return Integer.parseInt(fullLine);

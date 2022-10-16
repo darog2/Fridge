@@ -1,10 +1,13 @@
 package com.dungeon.module;
 
+import com.dungeon.service.FridgeService;
+
 import javax.xml.bind.annotation.*;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(propOrder = {"year", "company", "model", "freezer", "door"} )
-public  class Fridge  {
+public  class Fridge extends AbstractModule  {
+
     @XmlAttribute
     private int year;
     @XmlAttribute
@@ -15,6 +18,7 @@ public  class Fridge  {
     private Freezer freezer;
     @XmlElement
     private Door door;
+
 
 
     public Fridge(int year, String company, String model, Freezer freezer, Door door) {
@@ -78,4 +82,6 @@ public  class Fridge  {
                 ", door=" + door +
                 '}';
     }
+
+
 }

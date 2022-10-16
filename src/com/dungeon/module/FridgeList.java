@@ -33,6 +33,6 @@ public class FridgeList implements Iterable<Fridge> {
 
     @Override
     public Iterator<Fridge> iterator() {
-        return null;
+        return fridges.iterator();
     }
 }
