@@ -3,7 +3,10 @@ package com.dungeon.menu;
 
 import com.dungeon.IncorrectVolumeException;
 import com.dungeon.InputUtils;
+import com.dungeon.language.ApplicationConstants;
+import com.dungeon.language.LanguageUtil;
 import com.dungeon.module.*;
+import com.dungeon.service.FridgeService;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
@@ -13,14 +16,18 @@ import java.util.List;
 import java.util.Scanner;
 
 public class AdminMenu {
+    private FridgeService fridgeService;
 
+    public AdminMenu(FridgeService fridgeService) {
+        this.fridgeService = fridgeService;
+    }
 
     private static Freezer createFreezer() {
-        System.out.println("введите параметры холодильной камеры");
-        int width = InputUtils.readInt("введите ширину");
-        int height = InputUtils.readInt("введите высоту");
-        int length = InputUtils.readInt("введите длину");
-        int volume = InputUtils.readInt("введите обьем");
+        System.out.println(LanguageUtil.getMessage(ApplicationConstants.MENU_CREATE_FREEZER_TEXT));
+        int width = InputUtils.readInt(LanguageUtil.getMessage(ApplicationConstants.WIDTH_TEXT));
+        int height = InputUtils.readInt(LanguageUtil.getMessage(ApplicationConstants.HEIGHT_TEXT));
+        int length = InputUtils.readInt(LanguageUtil.getMessage(ApplicationConstants.LENGTH_TEXT));
+        int volume = InputUtils.readInt(LanguageUtil.getMessage(ApplicationConstants.VOLUME_TEXT));
 
         Freezer freezer = null;
         try {
@@ -28,85 +35,100 @@ public class AdminMenu {
             freezer.setShelfList(createShelves());
         } catch (IncorrectVolumeException e) {
             System.out.println(e.getMessage());
-            System.out.println("incorrect input, try again");
+            System.out.println(LanguageUtil.getMessage(ApplicationConstants.IS_CORRECT_TEXT));
             return createFreezer();
         }
         return freezer;
 
     }
 
-    private static List<Shelf> createShelves() {
-        System.out.println("введите параметры полок");
-        int width = InputUtils.readInt("введите ширину");
-        int height = InputUtils.readInt("введите высоту");
-        int length = InputUtils.readInt("введите длину");
-        int volume = InputUtils.readInt("введите обьем");
-        int count = InputUtils.readInt("введите количесво полок");
+    private static  List<Shelf> createShelves() {
+        System.out.println(LanguageUtil.getMessage(ApplicationConstants.SHELF_PARAMETR_TEXT));
+        int width = InputUtils.readInt(LanguageUtil.getMessage(ApplicationConstants.WIDTH_TEXT));
+        int height = InputUtils.readInt(LanguageUtil.getMessage(ApplicationConstants.HEIGHT_TEXT));
+        int length = InputUtils.readInt(LanguageUtil.getMessage(ApplicationConstants.LENGTH_TEXT));
+        int volume = InputUtils.readInt(LanguageUtil.getMessage(ApplicationConstants.VOLUME_TEXT));
+        int count = InputUtils.readInt(LanguageUtil.getMessage(ApplicationConstants.COUNT_SHELF_TEXT));
         List<Shelf> shelves = null;
         try {
             shelves = ShelfFactory.createShelves(width, height, length, volume, count);
         } catch (IncorrectVolumeException e) {
             System.out.println(e.getMessage());
-            System.out.println("incorrect input,true again");
+            System.out.println(LanguageUtil.getMessage(ApplicationConstants.IS_CORRECT_TEXT));
         }
         return shelves;
     }
 
     private static Door createDoor() {
-        System.out.println("введите параметры двери");
-        int width = InputUtils.readInt("введите ширину");
-        int height = InputUtils.readInt("введите высоту");
-        int length = InputUtils.readInt("введите длину");
-        int volume = InputUtils.readInt("введите обьем");
+        System.out.println(LanguageUtil.getMessage(ApplicationConstants.DOOR_PARAMERT_TEXT));
+        int width = InputUtils.readInt(LanguageUtil.getMessage(ApplicationConstants.WIDTH_TEXT));
+        int height = InputUtils.readInt(LanguageUtil.getMessage(ApplicationConstants.HEIGHT_TEXT));
+        int length = InputUtils.readInt(LanguageUtil.getMessage(ApplicationConstants.LENGTH_TEXT));
+        int volume = InputUtils.readInt(LanguageUtil.getMessage(ApplicationConstants.VOLUME_TEXT));
         Door door = null;
         try {
             door = new Door(width, height, length, volume);
             door.setShelfList(createShelves());
         } catch (IncorrectVolumeException e) {
             System.out.println(e.getMessage());
-            System.out.println("incorrect input, try again");
+            System.out.println(LanguageUtil.getMessage(ApplicationConstants.IS_CORRECT_TEXT));
         }
 
         return door;
     }
 
-    protected static void addNewFridge(FridgeList fridges) {
-
+    public  void addNewFridge(FridgeList fridges) {
         Fridge fridge = new Fridge();
-        fridge.setYear(InputUtils.readInt("введите год холодильника"));
-        fridge.setCompany(InputUtils.readLine("введите название компании"));
-        fridge.setModel(InputUtils.readLine("введите название модели"));
-        fridge.setWidth(InputUtils.readInt("введите ширину холодильника "));
-        fridge.setHeight(InputUtils.readInt("введите высоту"));
-        fridge.setLength(InputUtils.readInt("введите длину"));
-        fridge.setVolume(InputUtils.readInt("введите обьем"));
+        fridge.setYear(InputUtils.readInt(LanguageUtil.getMessage(ApplicationConstants.YEAR_FRIDGE_TEXT)));
+        fridge.setCompany(InputUtils.readLine(LanguageUtil.getMessage(ApplicationConstants.COMPANY_FRIDGE_TEXT)));
+        fridge.setModel(InputUtils.readLine(LanguageUtil.getMessage(ApplicationConstants.MODEL_FRIDGE_TEXT)));
+        fridge.setWidth(InputUtils.readInt(LanguageUtil.getMessage(ApplicationConstants.WIDTH_TEXT)));
+        fridge.setHeight(InputUtils.readInt(LanguageUtil.getMessage(ApplicationConstants.HEIGHT_TEXT)));
+        fridge.setLength(InputUtils.readInt(LanguageUtil.getMessage(ApplicationConstants.LENGTH_TEXT)));
+        fridge.setVolume(InputUtils.readInt(LanguageUtil.getMessage(ApplicationConstants.VOLUME_TEXT)));
         fridge.setFreezer(createFreezer());
         fridge.setDoor(createDoor());
-
-        fridges.add(fridge);
+        fridgeService.showFridge(fridge);
+        System.out.println(LanguageUtil.getMessage(ApplicationConstants.SAVE_FRIDGE_TEXT));
+        System.out.println(LanguageUtil.getMessage(ApplicationConstants.START_NEW_FRIDGE_TEXT));
+        System.out.println(LanguageUtil.getMessage(ApplicationConstants.OUT_FRIDGE_TEXT));
+        int choice= InputUtils.readInt(LanguageUtil.getMessage(ApplicationConstants.CHOICE));
+        switch (choice){
+            case 1 :{
+                fridges.add(fridge);
+                return;
+            }
+            case 2 :{
+                    break;
+            }
+            case 3:{
+                return;
+            }
+            default:
+        }
 
 
     }
 
     protected static void deleteFridge(FridgeList fridges) {
         List<Fridge> fridgeList = fridges.getFridges();
-        System.out.println("выбирете холодильник для удаления: ");
+        System.out.println( LanguageUtil.getMessage(ApplicationConstants.MENU_DELETE_TEXT));
         do {
             for (Fridge fridge : fridges) {
                 System.out.println(fridge.toString());
             }
-            int a = InputUtils.readInt("введите номер ");
+            int a = InputUtils.readInt(LanguageUtil.getMessage(ApplicationConstants.COUNT_TEXT));
             if (a > 0 && a <= fridgeList.size()) {
                 Fridge fridge = fridgeList.get(a - 1);
                 System.out.println(fridge.toString());
-                int confirm=InputUtils.readInt("1 нажмите для потверждения удаления: ");
+                int confirm=InputUtils.readInt(LanguageUtil.getMessage(ApplicationConstants.MENU_TEXT));
                 if(confirm==1) {
                     fridgeList.remove(fridge);
-                    System.out.println("холодильник был удален");
+                    System.out.println(LanguageUtil.getMessage(ApplicationConstants.MENU_DELETE_FRIDGE_TEXT));
                 }
                     return;
             }else {
-                System.out.println("введите сущесвующий номер холодильника: ");
+                System.out.println(LanguageUtil.getMessage(ApplicationConstants.MENU_SEARCH_TEXT));
             }
         }while (true);
 

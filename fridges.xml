@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<fridgeList>
+    <Fridges>
+        <Fridge year="1900" company="kjjdh" model="dijfsd" width="0" height="0" length="0" volume="0">
+            <freezer width="100" height="100" length="5" volume="34">
+                <shelves>
+                    <shelf width="100" height="100" length="100" volume="23"/>
+                    <shelf width="100" height="100" length="100" volume="23"/>
+                    <shelf width="100" height="100" length="100" volume="23"/>
+                    <shelf width="100" height="100" length="100" volume="23"/>
+                </shelves>
+            </freezer>
+            <door width="100" height="100" length="5" volume="20">
+                <shelves>
+                    <shelf width="100" height="100" length="5" volume="23"/>
+                    <shelf width="100" height="100" length="5" volume="23"/>
+                    <shelf width="100" height="100" length="5" volume="23"/>
+                    <shelf width="100" height="100" length="5" volume="23"/>
+                </shelves>
+            </door>
+        </Fridge>
+        <Fridge year="2011" company="sdfsdfdsfdsfdsf" model="12312jjj" width="0" height="0" length="0" volume="0">
+            <freezer width="100" height="100" length="100" volume="123">
+                <shelves>
+                    <shelf width="122" height="122" length="122" volume="11"/>
+                </shelves>
+            </freezer>
+            <door width="100" height="200" length="200" volume="11">
+                <shelves>
+                    <shelf width="200" height="111" length="20" volume="11"/>
+                </shelves>
+            </door>
+        </Fridge>
+        <Fridge year="3333" company="100" model="100" width="0" height="0" length="0" volume="0">
+            <freezer width="200" height="200" length="200" volume="20">
+                <shelves>
+                    <shelf width="100" height="100" length="200" volume="20"/>
+                    <shelf width="100" height="100" length="200" volume="20"/>
+                    <shelf width="100" height="100" length="200" volume="20"/>
+                    <shelf width="100" height="100" length="200" volume="20"/>
+                </shelves>
+            </freezer>
+            <door width="200" height="200" length="200" volume="20">
+                <shelves>
+                    <shelf width="200" height="200" length="200" volume="50"/>
+                    <shelf width="200" height="200" length="200" volume="50"/>
+                    <shelf width="200" height="200" length="200" volume="50"/>
+                    <shelf width="200" height="200" length="200" volume="50"/>
+                </shelves>
+            </door>
+        </Fridge>
+        <Fridge year="2222" company="членыраи744" model="ывдлааа" width="200" height="200" length="200" volume="300">
+            <freezer width="3230" height="300" length="200" volume="333">
+                <shelves>
+                    <shelf width="200" height="200" length="10" volume="20"/>
+                    <shelf width="200" height="200" length="10" volume="20"/>
+                    <shelf width="200" height="200" length="10" volume="20"/>
+                    <shelf width="200" height="200" length="10" volume="20"/>
+                    <shelf width="200" height="200" length="10" volume="20"/>
+                </shelves>
+            </freezer>
+            <door width="100" height="200" length="200" volume="100">
+                <shelves>
+                    <shelf width="100" height="100" length="100" volume="10"/>
+                    <shelf width="100" height="100" length="100" volume="10"/>
+                    <shelf width="100" height="100" length="100" volume="10"/>
+                    <shelf width="100" height="100" length="100" volume="10"/>
+                </shelves>
+            </door>
+        </Fridge>
+    </Fridges>
+</fridgeList>

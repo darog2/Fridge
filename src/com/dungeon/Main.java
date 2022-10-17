@@ -14,8 +14,6 @@ public class Main {
             UnsupportedEncodingException {
         FridgeService fridgeService= new FridgeService();
         FridgeList fridges = fridgeService.readFridgeFile();
-
-
 //        FridgeList fridges = new FridgeList();
         System.out.println(fridges.getFridges().size());
         PrintMenu printMenu= new PrintMenu(fridgeService);
