@@ -1,0 +1,97 @@
+<Messages>
+    <message>
+        <name>main.menu.text</name>
+        <value>select service mode
+            1 admin mode
+            2 user mode
+            3 Abandon hope, ye who enter here
+        </value>
+    </message>
+    <message>
+        <name>admin.menu.text</name>
+        <value>1 refrigerator add mode
+            2 refrigerator removal mode
+            3 exit program exit
+        </value>
+    </message>
+    <message>
+        <name>choice.text</name>
+        <value>Your choice</value>
+    </message>
+    <message>
+        <name>menu.delete.text</name>
+        <value>select refrigerator to delete</value>
+    </message>
+    <message>
+        <name>count.text</name>
+        <value>enter number</value>
+    </message>
+    <message>
+        <name>menu.text</name>
+        <value>1 click to confirm deletion</value>
+    </message>
+    <message>
+        <name>menu.delete.fridge.text</name>
+        <value>refrigerator has been removed</value>
+    </message>
+    <message>
+        <name>menu.search.text</name>
+        <value>enter an existing refrigerator number</value>
+    </message>
+    <message>
+        <name>menu.create.freezer.text</name>
+        <value>enter cold room parameters</value>
+    </message>
+    <message>
+        <name>width.text</name>
+        <value>enter width</value>
+    </message>
+    <message>
+        <name>height.text</name>
+        <value>enter height</value>
+    </message>
+    <message>
+        <name>length.text</name>
+        <value>enter length</value>
+    </message>
+    <message>
+        <name>volume.text</name>
+        <value>enter volume</value>
+    </message>
+    <message>
+        <name>is.correct.text</name>
+        <value>invalid input try again</value>
+    </message>
+    <message>
+        <name>shelf.parametr.text</name>
+        <value>enter the parameters of the shelves</value>
+    </message>
+    <message>
+        <name>count.shelf.text</name>
+        <value>enter number of shelves</value>
+    </message>
+    <name>door.paramert.text</name>
+    <value>enter door parameters</value>
+    <message>
+        <name>year.fridge.text</name>
+        <value>enter year of manufacture:</value>
+    </message>
+    <name>company.fridge.text</name>
+    <value>enter manufacturer:</value>
+    <message>
+        <name>model.fridge.text</name>
+        <value>enter model name:</value>
+    </message>
+    <message>
+        <name>save.fridge.text</name>
+        <value>save: 1</value>
+    </message>
+    <message>
+        <name>start.new.fridge.text</name>
+        <value>start again: 2</value>
+    </message>
+    <message>
+        <name>out.fridge.text</name>
+        <value> cancellation: 3</value>
+    </message>
+</Messages>

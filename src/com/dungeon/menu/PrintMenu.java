@@ -7,6 +7,8 @@ import com.dungeon.module.Fridge;
 import com.dungeon.module.FridgeList;
 import com.dungeon.service.FridgeService;
 
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 import java.util.Scanner;
 
 public class PrintMenu {
@@ -40,6 +42,7 @@ public class PrintMenu {
             default:
         }
         do {
+
             System.out.println(LanguageUtil.getMessage(ApplicationConstants.MAIN_MENU_TEXT));
 
 

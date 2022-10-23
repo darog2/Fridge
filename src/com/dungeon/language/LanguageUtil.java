@@ -1,7 +1,11 @@
 package com.dungeon.language;
 
+import javax.xml.bind.JAXBContext;
+import javax.xml.bind.JAXBException;
+import javax.xml.bind.Unmarshaller;
+import java.io.File;
 import java.util.Locale;
-import java.util.ResourceBundle;
+import java.util.Properties;
 
 public class LanguageUtil {
     private static LanguageUtil instance;
@@ -9,8 +13,7 @@ public class LanguageUtil {
     private static final Locale ruLocale = new Locale("ru", "UA");
     private static final Locale uaLocale = new Locale("ua", "UA");
     private static String BUNDLE_NAME = "ApplicationMessages";
-    private Locale locale;
-    private ResourceBundle resourceBundle;
+    private Properties properties;
 
     private LanguageUtil() {
     }
@@ -22,22 +25,40 @@ public class LanguageUtil {
         return instance;
     }
 
+    public void readFridgeFile(String file) {
+        try {
+            // создаем объект JAXBContext - точку входа для JAXB
+            JAXBContext jaxbContext = JAXBContext.newInstance(MessageList.class);
+            Unmarshaller un = jaxbContext.createUnmarshaller();
+
+            MessageList unmarshal = (MessageList) un.unmarshal(new File(file));
+            properties = new Properties();
+            for (Message message : unmarshal.getMessages()) {
+                properties.put(message.getName(), message.getValue());
+            }
+
+        } catch (JAXBException e) {
+            e.printStackTrace();
+        }
+
+    }
+
     public static String getMessage(String messageName) {
-        return instance.resourceBundle.getString(messageName);
+        return (String) instance.properties.get(messageName);
     }
 
     public void switchToRussian() {
-        locale = ruLocale;
-        resourceBundle = ResourceBundle.getBundle(BUNDLE_NAME, locale);
+        readFridgeFile("resources/Messages_ru.xml");
+
     }
 
     public void switchToUkrainian() {
-        locale = uaLocale;
-        resourceBundle = ResourceBundle.getBundle(BUNDLE_NAME, locale);
+
+        readFridgeFile("resources/Messages_ua.xml");
     }
 
     public void switchToEnglish() {
-        locale = enLocale;
-        resourceBundle = ResourceBundle.getBundle(BUNDLE_NAME, locale);
+
+        readFridgeFile("resources/Messages_en.xml");
     }
 }

@@ -1,0 +1,97 @@
+<Messages>
+    <message>
+        <name>main.menu.text</name>
+        <value>выберите режим пользования
+            1 режим администратора
+            2 режим пользователя
+            3 выход из программы
+        </value>
+    </message>
+    <message>
+        <name>admin.menu.text</name>
+        <value>1 режим добавления холодильника
+            2 режим удаления  холодильника
+            3 выход из программы
+        </value>
+    </message>
+    <message>
+        <name>choice.text</name>
+        <value>Ваш вибор</value>
+    </message>
+    <message>
+        <name>menu.delete.text</name>
+        <value>выбирите холодильник для удаления</value>
+    </message>
+    <message>
+        <name>count.text</name>
+        <value>введите номер</value>
+    </message>
+    <message>
+        <name>menu.text</name>
+        <value>1 нажмите для потверждения удаления</value>
+    </message>
+    <message>
+        <name>menu.delete.fridge.text</name>
+        <value>холодильник был удален</value>
+    </message>
+    <message>
+        <name>menu.search.text</name>
+        <value>введите действительный номер холодильника</value>
+    </message>
+    <message>
+        <name>menu.create.freezer.text</name>
+        <value>введите параметры холодильной камери</value>
+    </message>
+    <message>
+        <name>width.text</name>
+        <value>введите ширину</value>
+    </message>
+    <message>
+        <name>height.text</name>
+        <value>ввудите высоту</value>
+    </message>
+    <message>
+        <name>length.text</name>
+        <value>введите длину</value>
+    </message>
+    <message>
+        <name>volume.text</name>
+        <value>ввудите обьем</value>
+    </message>
+    <message>
+        <name>is.correct.text</name>
+        <value>неверное значение введите снова</value>
+    </message>
+    <message>
+        <name>shelf.parametr.text</name>
+        <value>ввдите параметри полок</value>
+    </message>
+    <message>
+        <name>count.shelf.text</name>
+        <value>ввдите количесво  полок</value>
+    </message>
+    <name>door.paramert.text</name>
+    <value>введите параметри двери</value>
+    <message>
+        <name>year.fridge.text</name>
+        <value>введите год производсва:</value>
+    </message>
+    <name>company.fridge.text</name>
+    <value>введите название производителя:</value>
+    <message>
+        <name>model.fridge.text</name>
+        <value>напечатайте название модели:</value>
+    </message>
+    <message>
+        <name>save.fridge.text</name>
+        <value>сохранить: 1</value>
+    </message>
+    <message>
+        <name>start.new.fridge.text</name>
+        <value>начать сначала: 2</value>
+    </message>
+    <message>
+        <name>out.fridge.text</name>
+        <value> отмена: 3</value>
+    </message>
+</Messages>
